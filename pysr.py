@@ -8,19 +8,22 @@ while True:
         try:
             text = r.recognize_google(audio)
             print(format(text))
-            if(text == "Stop"):
+            if(text == "stop"):
                 break
             else:
-                if text == "open downloads" or text=="see my downloads":
+                if text == "open downloads" or text == "see my downloads":
                     subprocess.check_output("Downloads.bat")
+                    break
 
-                elif text == "open Torrent folder" or text=="open my movies folder":
+                elif text == "open Torrent folder" or text == "open my movies folder":
                     subprocess.check_output("BiglyBt.bat")
+                    break
 
-                elif text == "open my project" or text=="project folder":
+                elif text == "open my project" or text == "project folder":
                     subprocess.check_output("Project.bat")
-                
-                else :
+                    break
+
+                else:
                     print("Not match with given instruction")
 
         except:
